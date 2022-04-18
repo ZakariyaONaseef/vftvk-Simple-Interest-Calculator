@@ -1,16 +1,70 @@
+<!DOCTYPE html>
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+        <title>Simple Interest Calculator</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="bootstrap.min.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+        <div class="maindiv">
+            <h1>Simple Interest Calculator</h1>
+            <div class="childdiv">
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <label for="principal" class="col-form-label">Amount</label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="number" id="principal" >
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <label for="rate" class="col-form-label">Interest Rate </label>
+                    </div>
+                    <div class="col-auto">
+                        <input type="range" id="rate" min="minval" max="maxval" value="10.25" step=".25" onchange="updateRate()">
+                    </div>
+                    <div class="col-auto">
+                        <span id="rate_val"> 10.25%</span>
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <label for="years" class="col-form-label">No. of Years</label>
+                    </div>
+                    <div class="col-auto">
+                        <select id="years">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center compute">
+                    <div class="col-auto">
+                        <button onclick="compute()" >Compute Interest</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <span id="result"></span>
+                    </div>
+                </div>
+            </div>
+            <footer>
+            </br>
+                &#169; Everyone can get reach<br/>
+                &#169; This Calculator belongs to Zakariya Omar Naseef
+            </footer>
+        </div>
     </body>
 </html>
